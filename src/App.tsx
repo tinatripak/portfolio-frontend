@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { lazy, Suspense } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import Loader from "./components/Loader/Loader";
+import "./styles/index.scss";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const Header = lazy(() => import("./components/Header/Header"));
+const Footer = lazy(() => import("./components/Footer/Footer"));
+const Home = lazy(() => import("./pages/Home/Home"));
+const Skills = lazy(() => import("./pages/Skills/Skills"));
+const Projects = lazy(() => import("./pages/Projects/Projects"));
+const Resume = lazy(() => import("./pages/Resume/Resume"));
+const Contact = lazy(() => import("./pages/Contact/Contact"));
 
+const App: React.FC = () => (
+  <Router>
+    <Suspense fallback={<Loader />}>
+      <Header />
+      <Home />
+      <Skills />
+      <Projects />
+      <Resume />
+      <Contact />
+      <Footer />
+    </Suspense>
+  </Router>
+);
 export default App;

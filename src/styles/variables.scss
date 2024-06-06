@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Jost:ital,wght@0,100..900;1,100..900&Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
+
+$Caveat: "Caveat", sans-serif;
+$Cormorant: "Cormorant", serif;
+$Jost: "Jost", sans-serif;
+$Merriweather: "Merriweather", serif;
+
+$bg: #f2eee6;
+$black: rgb(0, 0, 0);
+$white: rgb(255, 255, 255);
+$gray: rgb(135, 135, 135);
+$light-blue: rgb(233, 245, 255);
+$light-purple: rgb(243, 233, 255);
+$arrow-color: rgb(188, 150, 217);
+$purple-circle: rgb(243, 233, 255);
+$orange-circle: rgb(253, 177, 123);
+$light-pink-circle: rgb(239, 224, 229);
+$pink-circle: rgb(245, 181, 198);
+$dark-pink-circle: rgb(236, 165, 189);
+$light-blue-circle: rgb(210, 224, 255);
+
+$spacing-md: 16px;
+$spacing-lg: 32px;
+$spacing-xl: 40px;
+
+$contactBorderRadius: 20px;
+$buttonBorderRadius: 30px;
+$photoBorderRadius: 30px;
+$workExperienceBorderRadius: 40px;
+$bgPhotoBorderRadius: 150px;
+$blockBorderRadius: 30px;
+$borderCircle: 50%;
+
+$screenHeight: 100vh;
+$headerHeight: 100px;
+
+@mixin breakpoint($point) {
+  @if $point == burger {
+    @media (min-width: 1290px) {
+      @content;
+    }
+  }
+  @if $point == xl {
+    @media (max-width: 1289px) {
+      @content;
+    }
+  }
+  @if $point == sliderlg {
+    @media (max-width: 54em) {
+      @content;
+    }
+  }
+  @if $point == lg {
+    @media (max-width: 61em) {
+      @content;
+    }
+  }
+  @if $point == md {
+    @media (max-width: 47em) {
+      @content;
+    }
+  }
+  @if $point == sm {
+    @media (max-width: 36em) {
+      @content;
+    }
+  }
+  @if $point == xs {
+    @media (max-width: 30em) {
+      @content;
+    }
+  }
+  @if $point == xxs {
+    @media (max-width: 25em) {
+      @content;
+    }
+  }
+}

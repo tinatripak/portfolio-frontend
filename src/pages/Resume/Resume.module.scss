@@ -1,0 +1,86 @@
+@import "../../styles/variables.scss";
+
+.resume {
+  min-height: calc(100vh - 76px);
+  padding-bottom: 6rem;
+
+  .heading {
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .resumeheading {
+    text-align: center;
+    color: #442c25;
+    span {
+      font-family: $Caveat;
+      font-size: 2rem;
+    }
+  }
+  .resumeGrid {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+    padding: 0 10rem;
+
+    @include breakpoint(lg) {
+      display: block;
+      padding: 0 4rem;
+    }
+
+    @include breakpoint(sm) {
+      padding: 0 1.5rem;
+    }
+
+    .gridheading {
+      text-align: center;
+      padding: 1.5rem 0;
+      border-bottom: 2px solid black;
+    }
+    .education,
+    .experience {
+      .expItem {
+        &::after {
+          right: 135px;
+        }
+      }
+      .edItem,
+      .expItem {
+        padding: 1.5rem 1rem;
+        border-bottom: 2px solid #000;
+        border-right: 2px solid #000;
+        border-left: 2px solid #000;
+        .itemContent {
+          .nameDate {
+            padding: 1.5rem 0;
+            display: flex;
+            justify-content: space-between;
+            font-weight: 500;
+            .major {
+              font-family: $Caveat;
+              font-size: 1.7rem;
+            }
+          }
+        }
+
+        // &::after {
+        //   content: " ";
+        //   position: absolute;
+        //   width: 48px;
+        //   height: 48px;
+        //   line-height: 40px;
+        //   background: #fff;
+        //   border-radius: 50%;
+        //   border: 2px solid #000;
+        //   font-size: 30px;
+        //   text-align: center;
+
+        //   @include breakpoint(lg) {
+        //     content: none;
+        //   }
+        // }
+      }
+    }
+  }
+}

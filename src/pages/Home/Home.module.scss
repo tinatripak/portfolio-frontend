@@ -1,0 +1,136 @@
+@import "../../styles/variables.scss";
+
+.home {
+  text-transform: uppercase;
+  background-color: #f2eee6;
+  font-weight: 500;
+
+  display: flex;
+  justify-content: center;
+  gap: 10rem;
+  align-items: center;
+  min-height: calc(100vh - 97px);
+  padding: 0 6rem;
+
+  @include breakpoint(xl) {
+    gap: 3rem;
+    padding: 0 3rem 6rem 3rem;
+  }
+
+  @include breakpoint(lg) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include breakpoint(sm) {
+    padding: 0 1rem 6rem 1rem;
+  }
+
+  .content {
+    width: 45%;
+    @include breakpoint(xl) {
+      width: 70%;
+    }
+
+    @include breakpoint(lg) {
+      order: 2;
+      width: 90%;
+    }
+    .greeting {
+      span {
+        color: #442c25;
+      }
+    }
+    .name {
+      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+      font-size: 72px;
+      color: #fff;
+
+      @include breakpoint(sm) {
+        font-size: 52px;
+      }
+      span {
+        color: #442c25;
+      }
+    }
+    .position {
+      span {
+        text-transform: capitalize;
+        font-family: $Caveat;
+        font-size: 27px;
+      }
+    }
+    .about {
+      text-transform: initial;
+      font-weight: 300;
+      padding: 3rem 0;
+    }
+    .icons {
+      a {
+        color: $black;
+        font-size: 2rem;
+        &:first-child {
+          margin-right: 1rem;
+        }
+      }
+    }
+    .buttons {
+      margin-top: 3rem;
+      display: flex;
+
+      @include breakpoint(md) {
+        justify-content: center;
+      }
+
+      a {
+        color: #000;
+        text-decoration: none;
+      }
+
+      &__download {
+        padding: 1rem 3.5rem;
+        border-radius: 30px;
+        background-color: transparent;
+        font-family: $Jost;
+        text-transform: uppercase;
+        font-weight: 500;
+        box-shadow: 0px 19px 38px 0px rgba(0, 0, 0, 0.2);
+        @include breakpoint(md) {
+          box-shadow: 0px 19px 38px 0px rgba(0, 0, 0, 0.1);
+        }
+        &:hover {
+          background-color: rgba(61, 38, 8, 0.201);
+        }
+      }
+      &__skills {
+        padding: 1rem 3.5rem;
+        border: 0;
+        background-color: transparent;
+        font-family: $Jost;
+        text-transform: uppercase;
+        font-weight: 500;
+
+        @include breakpoint(md) {
+          display: none;
+        }
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .imageBlock {
+    @include breakpoint(lg) {
+      order: 1;
+    }
+    img {
+      border-radius: 50%;
+      width: 35vw;
+
+      @include breakpoint(lg) {
+        width: 65vw;
+      }
+    }
+  }
+}

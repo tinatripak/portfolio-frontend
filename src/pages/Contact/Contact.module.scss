@@ -1,0 +1,136 @@
+@import "../../styles/variables.scss";
+
+.contact {
+  min-height: calc(100vh - 100px);
+  .heading {
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .contactheading {
+    text-align: center;
+    color: #442c25;
+    span {
+      font-family: $Caveat;
+      font-size: 2rem;
+    }
+  }
+  .contactGrid {
+    display: flex;
+    justify-content: center;
+    gap: 10rem;
+    padding: 4rem 0;
+
+    @include breakpoint(lg) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @include breakpoint(xl) {
+      gap: 6rem;
+    }
+
+    .socialMedia {
+      .media {
+        display: flex;
+        gap: 5rem;
+        margin-bottom: 1rem;
+
+        @include breakpoint(sm) {
+          gap: 2rem;
+        }
+        .icon {
+          padding: 20px 23px;
+          border: 1px solid black;
+          border-radius: 50%;
+          background-color: #fff;
+        }
+        h3 {
+          font-family: $Caveat;
+          font-size: 1.8rem;
+        }
+        a {
+          color: #000;
+          text-decoration: none;
+        }
+      }
+      .mediaIcons {
+        margin-top: 4rem;
+        .icons {
+          margin-top: 1rem;
+          div {
+            font-size: 1.6rem;
+            font-family: $Caveat;
+            display: flex;
+            gap: 2rem;
+            a {
+              color: #000;
+            }
+          }
+        }
+      }
+      .downloadResume {
+        align-items: center;
+        background-color: #0000;
+        border: 1px solid #000;
+        border-radius: 30px;
+        color: #000;
+        display: flex;
+        font-family: Julius Sans One, sans-serif;
+        font-size: 14px;
+        height: 60px;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2vh;
+        text-decoration: none;
+        width: 200px;
+      }
+    }
+    .cv {
+      position: relative;
+      width: 100%;
+      max-width: 30rem;
+
+      @include breakpoint(lg) {
+        margin-top: 2rem;
+      }
+      @include breakpoint(sm) {
+        width: 85vw;
+        margin: 0 auto;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+
+        @include breakpoint(sm) {
+          width: 85vw;
+          margin: 0 auto;
+        }
+      }
+
+      a {
+        text-decoration: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-weight: 200;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        background-color: #442c25be;
+        color: white;
+        font-size: 16px;
+        padding: 12px 24px;
+        border: none;
+        cursor: pointer;
+        border-radius: 50px;
+        text-align: center;
+        &:hover {
+          background-color: #442c25;
+        }
+      }
+    }
+  }
+}

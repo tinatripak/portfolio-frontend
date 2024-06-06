@@ -1,0 +1,139 @@
+@import "../../styles/variables.scss";
+
+.header {
+  height: $headerHeight;
+  background-color: $bg;
+  z-index: 2;
+  position: sticky;
+  top: 0;
+  padding: 0 1rem;
+  width: 100%;
+
+  @include breakpoint(burger) {
+    padding: 0 3rem;
+  }
+  .content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+
+    .logo {
+      font-size: 40px;
+      cursor: pointer;
+    }
+
+    .nav {
+      top: 0;
+      right: 100%;
+      bottom: 0;
+      width: 100%;
+      height: 100vh;
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      backdrop-filter: blur(2px);
+      background: rgba($black, 0.8);
+      transform: translate(0);
+      transition: 0.3s ease transform;
+      font-size: 18px;
+      text-transform: uppercase;
+      font-weight: 300;
+      z-index: 2;
+
+      @include breakpoint(md) {
+        a {
+          color: white !important;
+        }
+      }
+
+      @include breakpoint(burger) {
+        flex-direction: row;
+        background: transparent;
+        width: auto;
+        height: 100%;
+        position: static;
+      }
+      ul {
+        list-style: none;
+        margin-top: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: $spacing-lg;
+
+        @include breakpoint(burger) {
+          flex-direction: row;
+          margin-bottom: 0;
+        }
+        li {
+          cursor: pointer;
+          min-width: 120px;
+
+          a {
+            text-decoration: none;
+            position: relative;
+            padding: 0.2em 0;
+
+            &.activeLink {
+              font-weight: 600;
+            }
+
+            &::after {
+              content: "";
+              position: absolute;
+              width: 100%;
+              transform: scaleX(0);
+              height: 2px;
+              bottom: 0;
+              left: 0;
+              background-color: $black;
+              transform-origin: bottom right;
+              transition: transform 0.25s ease-out;
+            }
+
+            &:hover::after {
+              transform: scaleX(1);
+              transform-origin: bottom left;
+            }
+          }
+        }
+      }
+
+      &.isMenu {
+        transform: translate(100%) !important;
+        color: $white;
+        font-size: 26px;
+      }
+      &.withoutMenu {
+        transform: none;
+        color: $black;
+      }
+    }
+
+    .toggle {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      font-size: 2rem;
+      transition: 0.3s ease all;
+      position: relative;
+      z-index: 3;
+
+      &:hover {
+        color: $light-blue;
+      }
+
+      .close {
+        color: white;
+      }
+      @include breakpoint(burger) {
+        display: none;
+      }
+    }
+  }
+}

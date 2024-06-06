@@ -1,0 +1,97 @@
+@import "../../styles/variables.scss";
+
+.skills {
+  padding-bottom: 6rem;
+
+  .heading {
+    font-size: 40px;
+    text-align: center;
+  }
+  .skillheading {
+    text-align: center;
+    color: #442c25;
+    text-transform: uppercase;
+
+    span {
+      font-family: $Caveat;
+      font-size: 2rem;
+    }
+  }
+  .skillGrid {
+    padding: 2rem 0 0 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    gap: 3rem;
+    width: 80%;
+    .skill {
+      width: 25rem;
+      @include breakpoint(sm) {
+        width: 100%;
+      }
+      &__description {
+        font-weight: 300;
+        margin: 2rem 0;
+        min-height: 4rem;
+      }
+      &__percentage {
+        padding: 0.7rem 0;
+        width: 23rem;
+      }
+      &__progress {
+        .bar {
+          background: hsl(0, 0%, 97%);
+          box-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.1) inset;
+          height: 4px;
+          margin-bottom: 12px;
+          margin-top: 50px;
+          position: relative;
+          .title {
+            color: #442c25;
+            font-size: 15px;
+            font-weight: 300;
+            position: relative;
+            top: -28px;
+            z-index: 1;
+            .number {
+              float: right;
+              margin-top: -10px;
+              font-weight: 500;
+            }
+          }
+        }
+        .barInner {
+          background-color: #442c25;
+          display: block;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          transition: width 1s linear 0s;
+          &:before {
+            content: "";
+            background-color: hsl(0, 0%, 100%);
+            border-radius: 50%;
+            width: 4px;
+            height: 4px;
+            position: absolute;
+            right: 1px;
+            top: 0;
+            z-index: 1;
+          }
+          &:after {
+            content: "";
+            width: 14px;
+            height: 14px;
+            background-color: inherit;
+            border-radius: 50%;
+            position: absolute;
+            right: -4px;
+            top: -5px;
+          }
+        }
+      }
+    }
+  }
+}
