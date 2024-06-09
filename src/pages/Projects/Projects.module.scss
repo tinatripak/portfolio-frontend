@@ -100,6 +100,8 @@
       font-family: $Jost;
       text-transform: uppercase;
       font-weight: 500;
+      color: #000;
+      border: 1px solid #000;
       &:hover {
         background-color: rgba(61, 38, 8, 0.201);
       }
