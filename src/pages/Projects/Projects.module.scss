@@ -92,5 +92,17 @@
         }
       }
     }
+    .loadMore {
+      cursor: pointer;
+      padding: 1rem 3.5rem;
+      border-radius: 30px;
+      background-color: transparent;
+      font-family: $Jost;
+      text-transform: uppercase;
+      font-weight: 500;
+      &:hover {
+        background-color: rgba(61, 38, 8, 0.201);
+      }
+    }
   }
 }

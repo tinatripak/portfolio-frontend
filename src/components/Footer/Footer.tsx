@@ -16,9 +16,15 @@ const Footer: React.FC = () => {
           cooperate with a friendly team.
         </p>
         <div className={styles.icons}>
-          <CiInstagram size={45} />
-          <FaGithub size={40} />
-          <CiLinkedin size={45} />
+          <a href="https://www.instagram.com/kristianna_tr/">
+            <CiInstagram size={45} />
+          </a>
+          <a href="https://github.com/tinatripak">
+            <FaGithub size={40} />
+          </a>
+          <a href="https://www.linkedin.com/in/kristina-tripak">
+            <CiLinkedin size={45} />
+          </a>
         </div>
       </div>
       <div className={styles.email}>

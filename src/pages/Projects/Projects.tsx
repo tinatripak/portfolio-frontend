@@ -1,13 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import projects from "./projectSet";
 import { GoArrowRight } from "react-icons/go";
 import styles from "./Projects.module.scss";
 
+const projectsPerRow = 6;
+
 const Projects: React.FC = () => {
   const projectVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
+  };
+
+  const [next, setNext] = useState(projectsPerRow);
+  const handleMoreImage = () => {
+    setNext(next + projectsPerRow);
   };
 
   return (
@@ -17,13 +24,13 @@ const Projects: React.FC = () => {
         MY <span>Projects</span>
       </h3>
       <div className={styles.projectGrid}>
-        {projects.map((project, index) => (
+        {projects?.slice(0, next)?.map((project, index) => (
           <motion.div
             key={index}
             className={styles.project}
             variants={projectVariants}
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
@@ -42,6 +49,11 @@ const Projects: React.FC = () => {
             </div>
           </motion.div>
         ))}
+        {next < projects?.length && (
+          <button className={styles.loadMore} onClick={handleMoreImage}>
+            Load more
+          </button>
+        )}
       </div>
     </div>
   );

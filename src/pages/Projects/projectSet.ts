@@ -14,7 +14,7 @@ const projects: Project[] = [
     description:
       "The website was implemented and designed for the stylist Liza Balizka, who has more than 800 clients all over the world with pages such as About Me, My Values, Services, Products, and Reviews pages. Also, a localization was created in English and Ukrainian languages. Implemented by React, SCSS, and TypeScript. The data was parsed from JSON files. The website has a responsive design.",
     imageSrc: "/images/Stylist.jpeg",
-    demoUrl: "https://lizabalizka.vercel.app/",
+    demoUrl: "https://stylist-lizabalizka.vercel.app/",
     codeUrl: "https://github.com/tinatripak/stylist_liza",
   },
   {
@@ -41,7 +41,7 @@ const projects: Project[] = [
     description:
       "It's a small portfolio of a fashion stylist, as a personal business card with several projects. The web pages are built using React, TypeSript and SCSS for component styling.",
     imageSrc: "/images/BusinessCard.jpeg",
-    demoUrl: "https://stylist-lizabalizka.vercel.app/",
+    demoUrl: "https://lizabalizka.vercel.app/",
     codeUrl: "https://github.com/tinatripak/personal_stylist",
   },
   {

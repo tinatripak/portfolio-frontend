@@ -1,0 +1,14 @@
+.collapsible {
+  cursor: pointer;
+  padding: 1.5rem 1rem;
+  .expand {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .expandedBlock {
+    border-top: 1px solid #ddd3c9;
+    margin-top: 1rem;
+  }
+}
