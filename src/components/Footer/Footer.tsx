@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
         <p>
           <IoMailOutline size={40} />
         </p>
-        <p>tinatripak2002@gmail.com</p>
+        <a href="mailto:khrystynatripak@gmail.com">khrystynatripak@gmail.com</a>
       </div>
     </div>
   );

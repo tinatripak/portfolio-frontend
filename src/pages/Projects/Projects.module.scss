@@ -67,7 +67,7 @@
       }
       &__buttons {
         flex: 1;
-        align-items: center;
+        align-items: end;
         display: flex;
         justify-content: space-between;
         @include breakpoint(md) {

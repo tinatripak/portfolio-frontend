@@ -2,7 +2,6 @@ import React from "react";
 import { CiLinkedin, CiMap } from "react-icons/ci";
 import { IoPersonOutline } from "react-icons/io5";
 import { GoMail } from "react-icons/go";
-
 import styles from "./Contact.module.scss";
 import { FaGithub } from "react-icons/fa";
 
@@ -21,7 +20,7 @@ const Contact: React.FC = () => {
             </p>
             <div className={styles.contactContent}>
               <h3>Address</h3>
-              <p>North York, Toronto, Canada</p>
+              <p>Toronto, ON, Canada</p>
             </div>
           </div>
           <div className={styles.media}>
@@ -30,8 +29,8 @@ const Contact: React.FC = () => {
             </p>
             <div className={styles.contactContent}>
               <h3>Email</h3>
-              <a href="mailto:tinatripak2002@gmail.com">
-                tinatripak2002@gmail.com
+              <a href="mailto:khrystynatripak@gmail.com">
+                khrystynatripak@gmail.com
               </a>
             </div>
           </div>
@@ -66,8 +65,8 @@ const Contact: React.FC = () => {
           <img src="/images/resume.png" alt="Resume" />
           <a
             className={styles.buttonDownload}
-            href="/Kristina_Tripak_CV.pdf"
-            download="Kristina_Tripak_CV.pdf"
+            href="/Tripak_Kristina_Resume.pdf"
+            download="Tripak_Kristina_Resume.pdf"
           >
             DOWNLOAD CV
           </a>
