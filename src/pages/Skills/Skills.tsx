@@ -4,40 +4,56 @@ import skills from "./skillSet";
 
 import styles from "./Skills.module.scss";
 
+const containerVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.5,
+    },
+  },
+};
+
+const skillVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
+
 const Skills: React.FC = () => {
   return (
-    <div className={styles.skills} id="skills">
+    <motion.div
+      className={styles.skills}
+      id="skills"
+      initial="hidden"
+      variants={containerVariants}
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+    >
       <h1 className={styles.heading}>PROFESSIONAL SKILLS</h1>
       <h3 className={styles.skillheading}>
         MY <span>Skills</span>
       </h3>
       <div className={styles.skillGrid}>
         {skills.map((skill) => (
-          <div className={styles.skill} key={skill.name}>
+          <motion.div
+            className={styles.skill}
+            key={skill.name}
+            variants={skillVariants}
+          >
             <h3 className={styles.skill__heading}>{skill.name}</h3>
             <p className={styles.skill__description}>{skill.description}</p>
-            <div className={styles.skill__progress}>
-              <div className={styles.bar}>
-                <small className={styles.title}>
-                  <span className={styles.number}>
-                    {skill.percentage * 100}%
-                  </span>
-                </small>
-                <motion.span
-                  className={styles.barInner}
-                  data-value="89"
-                  data-percentage-value="89"
-                  initial={{ width: "0%" }}
-                  whileInView={{ width: `${skill.percentage * 100}%` }}
-                  transition={{ duration: 2 }}
-                  viewport={{ once: true }}
-                ></motion.span>
-              </div>
-            </div>
-          </div>
+          </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

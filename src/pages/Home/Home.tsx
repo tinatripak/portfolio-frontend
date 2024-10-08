@@ -43,8 +43,8 @@ const Home: React.FC = () => {
           <div>
             <a
               className={styles.buttons__download}
-              href="/Kristina_Tripak_CV.pdf"
-              download="Kristina_Tripak_CV.pdf"
+              href="/Tripak_Kristina_Resume.pdf"
+              download="Tripak_Kristina_Resume.pdf"
             >
               Download CV
             </a>
